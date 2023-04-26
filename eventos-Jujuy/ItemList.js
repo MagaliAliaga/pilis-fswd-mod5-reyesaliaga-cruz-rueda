@@ -37,14 +37,14 @@ const ItemList = () => {
           <FAB
             style={styles.fab}
             small
-            icon="plus"
+            icon="arrow-left-bold-box"
             onPress={cambiarComponente}
           />
         ) : (
           <FAB
             style={styles.fab}
             small
-            icon="arrow-left-bold-box"
+            icon="plus"
             onPress={cambiarComponente}
           />
         )}
