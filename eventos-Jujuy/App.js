@@ -1,17 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { HomeScreen } from './src/screens/home/homeScreen';
+import { ProfileScreen } from './src/screens/profile/ProfileScreen';
+import LoginScreen from './src/screens/LoginScreen';
+import ItemList from './ItemList';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  if (!isLoggedIn) {
+    return <LoginScreen onLogin={handleLogin} />;
+  }
+
   return (
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="ItemList" component={ItemList} />
+        <Tab.Screen name="Settings" component={ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
