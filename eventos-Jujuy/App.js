@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen } from './src/screens/home/homeScreen';
-import { ProfileScreen } from './src/screens/profile/ProfileScreen';
+import { HomeScreen } from './src/screens/home/HomeScreen.jsx'
+import { ProfileScreen } from './src/screens/profile/ProfileScreen'
 import LoginScreen from './src/screens/LoginScreen';
 import ItemList from './ItemList';
 
